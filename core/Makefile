@@ -1952,6 +1952,10 @@ CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/$(ROM_NAME)_$(TARGET_PRODUCT)-$(ROM_VERS
 
 .PHONY: otapackage bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
+bacon: otapackage
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CUSTOM_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(CUSTOM_TARGET_PACKAGE) > $(CUSTOM_TARGET_PACKAGE).md5sum
+	@echo "Package Complete: $(CUSTOM_TARGET_PACKAGE)"
 
 endif    # build_ota_package
 
