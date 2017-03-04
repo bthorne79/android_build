@@ -602,7 +602,7 @@ function breakfast()
             if [ -z "$variant" ]; then
                 variant="userdebug"
             fi
-            lunch $target-$variant
+            lunch vanilla_$target-$variant
         fi
     fi
     return $?
