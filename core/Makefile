@@ -1975,23 +1975,7 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CUSTOM_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(CUSTOM_TARGET_PACKAGE) > $(CUSTOM_TARGET_PACKAGE).md5sum
-	@echo -e ""
-	@echo -e ${CL_CYN}
-	@echo -e "======================================="
-	@echo -e " __  __                        ___    ___             "
-	@echo -e "/\ \/\ \                   __ /\_ \  /\_ \              "
-	@echo -e "\ \ \ \ \     __      ___ /\_\\//\ \ \//\ \      __     "
-	@echo -e " \ \ \ \ \  /'__`\  /' _ `\/\ \ \ \ \  \ \ \   /'__`\ "
-	@echo -e "  \ \ \_/ \/\ \L\.\_/\ \/\ \ \ \ \_\ \_ \_\ \_/\ \L\.\_ "
-	@echo -e "   \ `\___/\ \__/.\_\ \_\ \_\ \_\/\____\/\____\ \__/.\_\"
-	@echo -e "    `\/__/  \/__/\/_/\/_/\/_/\/_/\/____/\/____/\/__/\/_/"
-	@echo -e "======================================="
-	@echo -e ""
-	@echo -e ""
-	@echo -e "ZIP: $(CUSTOM_TARGET_PACKAGE)"
-	@echo -e "SIZE: "`ls -hal $(CUSTOM_TARGET_PACKAGE) | cut -d ' ' -f 5`
-	@echo -e "MD5: "`cat $(CUSTOM_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1`
-    @echo -e ${CL_RST}
+	@echo "Package Complete: $(CUSTOM_TARGET_PACKAGE)"
 
 endif    # build_ota_package
 
