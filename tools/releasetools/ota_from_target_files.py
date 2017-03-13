@@ -659,7 +659,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("                                            ")
   script.Print("                                            ")
   script.Print("      Device       : %s"%(model)             )
-  script.Print("      Vanilla Version : %s"%(version)             )
+  script.Print("      Version      : %s"%(version)             )
   script.Print("      Build number : %s"%(build)             )
   script.Print("      Build date   : %s"%(date)              )
 	
