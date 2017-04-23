@@ -27,6 +27,14 @@ PRODUCT_PACKAGES := \
     SystemUI \
     EasterEgg \
     WallpaperCropper
+	
+ifeq ($(PIXEL),true)
+PRODUCT_PACKAGES += \
+    PixelMusicFX 
+else
+PRODUCT_PACKAGES += \
+    MusicFX 
+endif
 
 PRODUCT_PACKAGES += \
     clatd \
